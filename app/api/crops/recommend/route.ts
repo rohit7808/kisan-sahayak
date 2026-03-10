@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/db';
+import connectMongo from '@/lib/mongodb';
 import { Crop } from '@/models/Schemes'; // Using Schemes file where models are defined for now
 
 // Fallback data for MVP if DB is empty
@@ -58,16 +58,27 @@ const STATIC_CROPS = [
 
 export async function POST(request: Request) {
     try {
-        await dbConnect();
+        await connectMongo();
         const { soilType, season } = await request.json();
 
-        // For MVP, filter static data first. In production, query DB.
-        // const crops = await Crop.find({ soilTypes: soilType, seasons: season });
+        let crops = [];
 
-        let crops = STATIC_CROPS.filter(c =>
-            (c.soilTypes.includes(soilType) || c.soilTypes.includes('Alluvial')) &&
-            c.seasons.includes(season)
-        );
+        try {
+            crops = await Crop.find({
+                soilTypes: soilType,
+                seasons: season
+            }).lean();
+        } catch (dbError) {
+            // if no db data, keep static fallback
+            console.warn('MongoDB crop query failed, falling back to static data', dbError);
+        }
+
+        if (!crops || crops.length === 0) {
+            crops = STATIC_CROPS.filter(c =>
+                (c.soilTypes.includes(soilType) || c.soilTypes.includes('Alluvial')) &&
+                c.seasons.includes(season)
+            );
+        }
 
         // If no exact match, return some generic ones
         if (crops.length === 0) {
