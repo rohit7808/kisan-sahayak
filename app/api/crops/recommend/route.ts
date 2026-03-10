@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import connectMongo from '@/lib/mongodb';
-import { Crop } from '@/models/Schemes'; // Using Schemes file where models are defined for now
+import { Crop, ICrop } from '@/models/Schemes'; // Using Schemes file where models are defined for now
 
 // Fallback data for MVP if DB is empty
-const STATIC_CROPS = [
+const STATIC_CROPS: ICrop[] = [
     {
         name: 'Wheat (गेहूं)',
         soilTypes: ['Alluvial', 'Clay'],
@@ -61,10 +61,10 @@ export async function POST(request: Request) {
         await connectMongo();
         const { soilType, season } = await request.json();
 
-        let crops = [];
+        let crops: ICrop[] = [];
 
         try {
-            crops = await Crop.find({
+            crops = await Crop.find<ICrop>({
                 soilTypes: soilType,
                 seasons: season
             }).lean();

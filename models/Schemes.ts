@@ -1,6 +1,21 @@
-import mongoose, { Schema, model, models } from 'mongoose';
+import mongoose, { Document, Schema, model, models } from 'mongoose';
 
-const cropSchema = new Schema({
+export interface ICrop {
+  name: string;
+  hindiName?: string;
+  soilTypes: string[];
+  seasons: string[];
+  description?: string;
+  inputs?: {
+    fertilizer?: string;
+    pesticide?: string;
+  };
+  imageUrl?: string;
+}
+
+export interface ICropDocument extends ICrop, Document {}
+
+const cropSchema = new Schema<ICrop>({
     name: { type: String, required: true },
     hindiName: String,
     soilTypes: [String],
