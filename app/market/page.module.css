@@ -1,0 +1,50 @@
+.container {
+    padding: 2rem 1rem;
+}
+
+.title {
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.lastUpdated {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table th {
+    background-color: var(--primary-green);
+    color: white;
+    font-weight: 600;
+}
+
+.table tr:hover {
+    background-color: var(--light-green);
+}
+
+.price {
+    font-weight: bold;
+    color: var(--earth-brown);
+}

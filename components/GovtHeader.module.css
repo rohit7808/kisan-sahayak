@@ -1,0 +1,67 @@
+/* GovtHeader.module.css */
+.topBar {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.govtLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.govtLinks a:hover {
+    text-decoration: underline;
+    color: #000080;
+}
+
+.branding {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logoText h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    line-height: 1.2;
+    color: #000080;
+    /* Navy Blue */
+    text-transform: uppercase;
+}
+
+.logoText p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+}
+
+.emblem {
+    height: 60px;
+    width: auto;
+}
+
+@media (max-width: 768px) {
+    .govtLinks {
+        display: none;
+    }
+
+    .logoText h1 {
+        font-size: 1.4rem;
+    }
+}

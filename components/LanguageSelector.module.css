@@ -1,0 +1,50 @@
+.languageSelectContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.languageSelect {
+    appearance: none;
+    background-color: var(--light-green);
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.languageSelect:hover {
+    background-color: #e8f5e9;
+}
+
+.languageSelect:focus {
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Custom arrow icon */
+.languageSelectContainer::after {
+    content: '▼';
+    font-size: 0.7rem;
+    color: var(--primary-green);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Mobile specific overrides */
+.mobileLangSelect {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    color: var(--text-dark);
+}

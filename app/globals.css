@@ -1,0 +1,117 @@
+:root {
+  /* Government Palette: Tiranga Inspired + Accessibility */
+  --primary-orange: #FF9933;
+  /* Saffron */
+  --primary-green: #138808;
+  /* India Green */
+  --primary-blue: #000080;
+  /* Navy Blue for text/headings */
+
+  --bg-color: #f9f9f9;
+  /* Easy on eyes off-white */
+  --surface-color: #ffffff;
+
+  --text-primary: #1a1a1a;
+  /* High contrast black */
+  --text-secondary: #4a4a4a;
+
+  --border-color: #e0e0e0;
+
+  /* Shadows - Minimalist */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  --radius: 4px;
+  /* Squarer radius for official look */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* System fonts prioritized for speed and readability */
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 18px;
+  /* Increased base size for readability */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* Card Style - Simple & Clean */
+.card {
+  background: var(--surface-color);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Primary Button - High Visibility */
+.btn-primary {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: #0e6b05;
+}
+
+/* Form Elements - Large Hit Targets */
+input,
+select,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid #999;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-blue);
+  border-color: var(--primary-blue);
+}

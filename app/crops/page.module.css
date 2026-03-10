@@ -1,0 +1,152 @@
+.container {
+    padding: 2rem 1rem;
+}
+
+.title {
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 2rem;
+}
+
+.content {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formGroup label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.formGroup select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    outline: none;
+}
+
+.formGroup select:focus {
+    border-color: var(--primary-green);
+}
+
+.error {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ef5350;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.results {
+    margin-top: 1rem;
+}
+
+.resultGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.cropCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid #e0e0e0;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cropCard:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-green);
+}
+
+.icon {
+    color: var(--secondary-green);
+    margin-bottom: 0.5rem;
+}
+
+.cropCard h3 {
+    margin: 0.5rem 0;
+    color: var(--primary-green);
+}
+
+.cropCard p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tags span {
+    background: var(--light-green);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.noResult {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    background: #f5f5f5;
+    border-radius: var(--radius);
+    grid-column: 1 / -1;
+}
